@@ -1,0 +1,150 @@
+$green-color: #2ecd70;
+$yellow-color: #FFCF26;
+$font-size: 18px;
+$sub-font: 16px;
+$small-font: 14px;
+$border-radius: 3px;
+$text-color: #2e2e2e;
+
+.messages-content
+{
+	margin-top: 40px;
+
+	.nav-tabs 
+	{
+		margin-bottom: 30px;
+	}
+
+	.message-tab-item
+	{	
+		.nav-link
+		{
+			color: $text-color;
+
+			&.active
+			{
+				background: $green-color;
+				color: #fff;
+			}
+		}
+	}
+
+	.message
+	{
+		padding: 20px 15px 30px 20px;
+		box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+		border-radius: $border-radius;
+		cursor: pointer;
+		max-height: 150px;
+		margin-bottom: 12px;
+	}
+
+	.message-header
+	{
+		font-size: $font-size;
+		font-weight: 600;
+		color: $text-color;
+		text-decoration: none;
+		cursor: pointer;
+		&:hover 
+		{
+			text-decoration: none;
+			color: $text-color;
+		}
+	}
+
+	.message-time
+	{
+		color: #fff;
+		background: $green-color;
+		width: 65%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: $border-radius;
+		font-size: 14px;
+	}
+
+	.message-content
+	{
+		margin-top: 14px;
+		font-size: $sub-font;
+		color: $text-color;
+	}
+}
+
+
+.message.one 
+{
+	padding: 30px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+	border-radius: $border-radius;
+
+	.message-img
+	{
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+	}
+
+	.message-header	
+	{
+		font-size: $font-size;
+		font-weight: 600;
+		color: $text-color;
+
+	}
+
+	.message-time
+	{
+		color: #fff;
+		background: $green-color;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: $border-radius;
+		font-size: 14px;
+	}
+
+	.message-content
+	{
+		margin-top: 20px;
+		font-size: $sub-font;
+		font-weight: 400;
+		color: $text-color;
+		margin-bottom: 20px;
+	}
+
+}
+
+@media (max-width: 992px)
+{	
+	
+	.messages-content
+	{
+		.message-time 
+		{
+			background: none;
+			color: $text-color;
+			display: block;
+		}
+
+		.message 
+		{
+			max-height: 200px;
+		}
+	}
+
+	.message.one 
+	{
+		.message-time
+		{
+			color: $text-color;
+			background: none;
+			display: block;
+		}
+	}
+}

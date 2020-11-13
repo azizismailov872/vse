@@ -1,0 +1,106 @@
+.burger-btn 
+{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .burger 
+    {
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.1s ease-out;
+
+    }
+
+    .burger::before
+    {
+        position: absolute;
+        content: '';
+        background: #fff;
+        top: -8px;
+        left: 0;
+        width: 30px;
+        height: 4px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -moz-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -ms-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -o-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+    }
+
+    .burger::after
+    {
+        position: absolute;
+        content: '';
+        background: #fff;
+        top: 8px;
+        left: 0;
+        width: 30px;
+        height: 4px;
+         -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -moz-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -ms-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        -o-transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+        transition: transform 0.2s linear, top 0.2s ease-in 0.2s;
+    }
+
+
+
+
+    &.active 
+    {
+        .burger 
+        {
+            background: transparent;
+        }
+
+        .burger::before
+        {
+            top: 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -moz-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -ms-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -o-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            
+        }
+
+        .burger::after
+        {
+            top: 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -moz-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -ms-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            -o-transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+            transition: top 0.2s ease-in, transform 0.2s linear 0.2s;
+        }
+    }
+}
+
+

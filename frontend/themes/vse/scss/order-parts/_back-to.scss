@@ -1,0 +1,23 @@
+.back-to-button
+{
+	color: $text-color;
+	text-decoration: none;
+	font-size: $sub-font;
+	font-weight: 400;
+	margin-bottom: 8px;
+	display: flex;
+	align-items:center;
+	max-width: 90px;
+	.back-to-icon
+	{
+		font-weight: 600;
+		margin-right: 10px;
+		font-size: 24px;
+	}
+
+	&:hover 
+	{
+		text-decoration: none;
+		color: $text-color;
+	}
+}

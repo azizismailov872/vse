@@ -1,0 +1,110 @@
+.button
+{
+	height: 34px;
+	outline: none !important;
+	border: none !important;
+	border-radius: $border-radius;
+	color: #fff;
+	font-size: $sub-font;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 250px;
+	font-weight: 600;
+	box-shadow: none !important;
+	cursor: pointer;
+	&.full 
+	{
+		max-width: 100% !important;
+		width: 100%;
+	}
+
+	&:hover 
+	{
+		text-decoration: none;
+		color: #fff;
+	}
+
+	&.green 
+	{
+		background: $green-color;
+	}
+
+	&.yellow 
+	{
+		background: $yellow-color;
+		color: #fff;
+		cursor: pointer;
+		&:hover
+		{
+			color: #fff;
+		}
+	}
+
+	&.red 
+	{
+		background: red;
+	}
+
+	&.mb-10 
+	{
+		margin-bottom: 10px;
+	}
+
+	&.mb-15
+	{
+		margin-bottom: 15px;
+	}
+
+	&.mb-20 
+	{
+		margin-bottom: 20px;
+	}
+
+	&.w-lg-50
+	{
+		width: 50%;
+	}
+
+
+}
+
+
+
+@media (max-width: 768px)
+{
+	.button
+	{
+		font-size: 16px;
+	}
+}
+
+
+@media (max-width: 992px)
+{
+	.button.w-lg-50
+	{
+		width: 50%;
+	}
+
+	.button.w-lg-100
+	{
+		width: 100%;
+	}
+
+	.button.mb-sm-10
+	{
+		margin-bottom: 10px;
+	}
+}
+
+
+
+@media (max-width: 576px)
+{
+	.button.w-50
+	{
+		width: 50%;
+	}
+}

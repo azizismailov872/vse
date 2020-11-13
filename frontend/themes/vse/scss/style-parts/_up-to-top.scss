@@ -1,0 +1,38 @@
+.up-to-top
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: $green-color;
+	cursor: pointer;
+	position: fixed;
+	z-index: 25;
+	bottom: 15px;
+	right: 15px;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.4s linear;
+	&::after 
+	{
+		cursor: pointer;
+		content: "\f077";
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 1em;
+		line-height: 40px;
+		color: #fff;
+	}
+}
+
+
+@media (max-width: 768px)
+{
+	.up-to-top.active
+	{
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.4s linear;
+	}
+}

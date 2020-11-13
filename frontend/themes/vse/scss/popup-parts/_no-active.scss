@@ -1,0 +1,61 @@
+.popup.no-active
+{
+	.popup-content 
+	{
+		padding: 30px 20px;
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.popup-body
+	{	
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.no-active-header
+	{
+		font-size: 22px;
+		font-weight: 600;
+		color: #2e2e2e;
+	}
+	
+}
+
+@media (max-width: 576px)
+{
+	.popup.no-active
+	{
+		.popup-content 
+		{
+			max-width: 350px;
+		}
+
+		.popup-body
+		{	
+			height: 100px;
+		}
+
+		.no-active-header
+		{
+			font-size: 18px;
+		}
+
+	}
+}
+
+@media (max-width: 400px)
+{
+	.popup.no-active
+	{
+		.popup-content
+		{
+			width: 100%;
+			max-width: 300px;
+		}
+
+
+	}
+}

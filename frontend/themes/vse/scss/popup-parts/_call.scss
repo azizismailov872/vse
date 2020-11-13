@@ -1,0 +1,48 @@
+.popup.call 
+{
+	.popup-content
+	{
+		padding: 30px 20px;
+		max-width: 480px;
+		min-width: 480px;
+		min-height: 200px;
+	}
+
+	.call-header
+	{	
+		font-size: $sub-font;
+		font-weight: 600;
+		color: $text-color;
+		margin-bottom: 20px;
+	}
+
+	.call-text
+	{
+		margin-bottom: 20px;
+		color: $text-color;
+	}
+
+	.call-link
+	{
+		color: $text-color;
+		text-decoration: none;
+
+		&:hover
+		{
+			color: $text-color;
+			text-decoration: none;
+		}
+	}
+}
+
+@media (max-width: 576px)
+{
+	.popup.call
+	{
+		.popup-content 
+		{
+			min-width: 300px;
+			min-height: 200px;
+		}
+	}
+}

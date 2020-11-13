@@ -1,0 +1,44 @@
+$green-color: #2ecd70;
+$yellow-color: #FFCF26;
+$font-size: 18px;
+$sub-font: 16px;
+$small-font: 14px;
+$border-radius: 3px;
+$text-color: #2e2e2e;
+
+@import 'style-parts/_normolize';
+@import 'style-parts/_header';
+@import 'style-parts/_burger-menu';
+@import 'style-parts/_category';
+@import 'style-parts/_sidebar';
+@import 'style-parts/_categories-list';
+@import 'style-parts/_button';
+@import 'style-parts/_orders';
+@import 'style-parts/_pagination';
+@import 'style-parts/_input';
+@import 'style-parts/_up-to-top';
+@import 'style-parts/_error';
+.main 
+{	
+	min-height: 100%;
+}
+
+.content-header
+{
+	font-size: $font-size;
+	color: $text-color;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.content
+{
+	border-radius: $border-radius;
+}
+
+.lock 
+{
+	overflow: hidden;
+}
+
+
