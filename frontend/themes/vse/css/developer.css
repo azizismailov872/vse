@@ -1,0 +1,53 @@
+.developer-contact-link
+{
+	color: #2e2e2e;
+	font-size: 34px;
+	font-weight: 600;
+	transition: all 0.3s linear;
+}
+
+.developer-contact-link:hover
+{
+	color: #000;
+}
+
+.developer-contact-header
+{
+	margin-bottom: 15px;
+}
+
+.developer-contact-text a
+{
+	font-size: 18px;
+	font-weight: 600;
+	color: #2e2e2e;
+}
+
+.about-developer-title
+{
+	font-size: 36px;
+	font-weight: 600;
+	color: #2e2e2e;
+	margin-bottom: 15px;
+}
+
+.about-developer-desc
+{
+	font-size: 18px;
+	color: #2e2e2e;
+	font-weight: 500;
+}
+
+.developer-page-link
+{
+	padding: 10px 15px;
+	color: #fff;
+	background: #69ce71;
+	outline: none;
+	border:  none;
+}
+
+.developer-page-link:hover
+{
+	background: #69ce71;
+}
