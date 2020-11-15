@@ -149,7 +149,7 @@ class FrontendOrderController extends Controller
     public function actionSave()
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        
+
         $request = \Yii::$app->getRequest();
 
         $result = false;

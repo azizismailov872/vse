@@ -21,7 +21,25 @@ class WriteMessage extends Model
 			[['author_id','reciver_id'],'integer'],
 			[['message'],'required','message' => 'Сообщение не может быть пустым'],
 			[['message'],'string'],
+			[['message'],'swearFilter'],
 		];
+	}
+
+	public function swearFilter($attribute,$params)
+	{
+		$swearWords = Yii::$app->params['swearWords'];
+
+		foreach($swearWords as $swear)
+		{
+			if(preg_match('/'.$swear.'/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+			elseif(preg_match('/^ам$/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+		}
 	}
 
 

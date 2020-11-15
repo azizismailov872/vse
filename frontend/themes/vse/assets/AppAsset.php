@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
       	'fonts/fontawesome-all.min.css',
       	'fonts/typicons.min.css',
       	'fonts/font-awesome.min.css',
+        'css/developer.css',
       	'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
     ];
     public $js = [

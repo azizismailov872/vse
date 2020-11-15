@@ -26,11 +26,29 @@ class RegisterForm extends Model
             ['email', 'required','message' => 'Введите email'],
             ['email', 'email','message' => 'Введите корректный email'],
             ['email', 'string', 'max' => 255,'message' => 'Слишком длинный email'],
+            [['email','password'],'swearFilter'],
             ['email', 'unique', 'targetClass' => User::className(), 'message' => 'Пользователь с таким email уже существует'],
             ['password', 'required','message' => 'Введите пароль'],
             ['password','string','min' => 6,'tooShort' => 'Пароль должен содержать не менее 6 символов'],
         ];
     }
+
+    public function swearFilter($attribute,$params)
+	{
+		$swearWords = Yii::$app->params['swearWords'];
+
+		foreach($swearWords as $swear)
+		{
+			if(preg_match('/'.$swear.'/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+            elseif(preg_match('/^ам$/ui',$this->$attribute))
+            {
+                $this->addError($attribute,'Нецензурные выражения запрещены');
+            }
+		}
+	}
 
     /**
      * Signs user up.

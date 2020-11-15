@@ -24,6 +24,7 @@ class LoginForm extends Model
         return [
             // username and password are both required
             [['login'], 'required','message' => 'Введите почту'],
+            [['login'],'swearFilter'],
             [['password'], 'required','message' => 'Введите пароль'],
             // rememberMe must be a boolean value
             [['login'], 'exist', 'targetClass' => User::className(), 'targetAttribute' => ['login' => 'email'],'message' => 'Пользователя с такой почтой не существует'],
@@ -33,6 +34,19 @@ class LoginForm extends Model
             ['password','string','min' => 6,'tooShort' => 'Пароль должен содержать не менее 6 символов'],
         ];
     }
+
+    public function swearFilter($attribute,$params)
+	{
+		$swearWords = Yii::$app->params['swearWords'];
+
+		foreach($swearWords as $swear)
+		{
+			if(preg_match('/'.$swear.'/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Ошибка. Нецензурные выражения запрещены');
+			}
+		}
+	}
 
     /**
      * Validates the password.

@@ -33,6 +33,7 @@ class EditOrder extends Model
 			[['author_id','category_id','status'],'integer'],
 			[['author_name','author_phone'],'string','max' => 255,'message' => 'Превышено максимальное колличество символов'],
 			[['content'],'string'],
+			[['content'],'swearFilter'],
 			[['author_phone'],'minPhone'],
 		];
 	}
@@ -42,6 +43,23 @@ class EditOrder extends Model
 		$this->attributes = $order->attributes;
 
 		$this->order = $order;
+	}
+
+	public function swearFilter($attribute,$params)
+	{
+		$swearWords = Yii::$app->params['swearWords'];
+
+		foreach($swearWords as $swear)
+		{
+			if(preg_match('/'.$swear.'/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+			elseif(preg_match('/^ам$/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+		}
 	}
 
 	public function minPhone($attribute,$params)

@@ -43,7 +43,7 @@ class UpdateFrontendUser extends Model
 	public function rules()
 	{
 		return [
-			[['newPassword'],'string','max' => 255,'message' => 'Новый пароль слишком длинный'],
+			[['newPassword'],'string','max' => 255,'tooLong' => 'Новый пароль слишком длинный'],
 			[['email'],'email','message' => 'Введите корректный  email'],
 			[['email'],'checkUniqueEmail'],
 			[['email'],'required','message' => 'Введите email'],
@@ -55,8 +55,26 @@ class UpdateFrontendUser extends Model
 			[['oldPassword'],'validatePassword'],
 			[['phone'],'minPhone'],
 			[['phone'],'checkUniquePhone'],
-			[['description'],'string','min' => 6,'message' => 'Слишком короткое описание'],
+			[['description'],'string','min' => 6,'tooShort' => 'Слишком короткое описание'],
+			[['username','surname','description','email'],'swearFilter'],
 		];
+	}
+
+	public function swearFilter($attribute,$params)
+	{
+		$swearWords = Yii::$app->params['swearWords'];
+
+		foreach($swearWords as $swear)
+		{
+			if(preg_match('/'.$swear.'/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+			elseif(preg_match('/^ам$/ui',$this->$attribute))
+			{
+				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+		}
 	}
 
 	public function validatePassword($attribute,$params)

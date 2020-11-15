@@ -256,6 +256,12 @@ class SiteController extends Controller
 
     }
 
+    public function actionDeveloper()
+    {   
+        $this->view->title = 'Aziz Ismailov Contacs';
+        return $this->render('developer');
+    }
+
     /**
      * Resets password.
      *
