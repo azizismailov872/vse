@@ -30,8 +30,8 @@ use yii\helpers\Url;
             Категории 
         </h2>
         <ul class="categories-list">
-            <li class="categories-item all">
-                <a href="<?= Url::home();?>" class="categories-link all">Все</a>
+            <li class="categories-item">
+                <a href="<?= Url::home();?>" class="categories-link">Все</a>
             </li>
             <?php foreach($categoriesList as $category):?>
             <li class="categories-item">
