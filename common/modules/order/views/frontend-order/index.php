@@ -38,7 +38,7 @@ use yii\widgets\LinkPager;
             'class' => 'error-message'
         ],
         'validateOnChange' => true,
-    ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Опишите заказ...']);?>
+    ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Опишите ваш заказ. Например: Нужен ремонт квартиры...']);?>
 </div>
 <?= $form->field($model,'category_id',[
     'template' => '
@@ -46,7 +46,7 @@ use yii\widgets\LinkPager;
              {error}
         </div>
         <div class="col-lg-4 order-1 pl-lg-2">
-            <button class="button green full order-form-button popup-open" id="new-order">Новый заказ</button>
+            <button class="button green full order-form-button popup-open" id="new-order">Создать заказ</button>
         </div>
         <div class="col-lg-8 pr-lg-2">
             {input}
