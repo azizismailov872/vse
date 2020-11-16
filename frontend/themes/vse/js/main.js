@@ -1,5 +1,6 @@
 let lockPaddingValue = window.innerWidth - document.querySelector('.wrap').offsetWidth + 'px';
 
+//Сохранение заказа по клавише Enter
 document.onkeyup = function (e) {
     e = e || window.event;
 
