@@ -159,7 +159,7 @@ class FrontendProfileController extends Controller
         if(Yii::$app->request->isPost)
         {
             if($update->load(Yii::$app->request->post()))
-            {
+            {   
                 $image = UploadedFile::getInstance($update,'image');
 
                 if($update->saveUser($image))
