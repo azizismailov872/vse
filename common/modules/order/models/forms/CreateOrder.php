@@ -31,8 +31,26 @@ class CreateOrder extends Model
 			[['author_name','author_phone'],'string','max' => 255,'message' => 'Превышено максимальное колличество символов'],
 			[['content'],'string'],
 			[['content'],'swearFilter'],
+			[['content'],'phoneFilter'],
 			[['author_phone'],'minPhone'],
 		];
+	}
+
+	public function phoneFilter($attribute,$params)
+	{	
+		$numberLayout = [
+			'/\+996[0-9]{4,}/ui',
+			'/0[0-9]{3}[0-9]{4,}/ui',
+			'/[0-9]{9,}/ui',
+		];
+
+		foreach($numberLayout as $number)
+		{
+			if(preg_match($number,$this->$attribute))
+			{
+				$this->addError($attribute,'Указывать номер телефона запрещено');
+			}
+		}
 	}
 
 	public function swearFilter($attribute,$params)

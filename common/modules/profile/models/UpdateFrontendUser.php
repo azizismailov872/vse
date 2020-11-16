@@ -55,6 +55,7 @@ class UpdateFrontendUser extends Model
 			[['oldPassword'],'validatePassword'],
 			[['phone'],'minPhone'],
 			[['phone'],'checkUniquePhone'],
+			[['description'],'phoneFilter'],
 			[['description'],'string','min' => 6,'tooShort' => 'Слишком короткое описание'],
 			[['username','surname','description','email'],'swearFilter'],
 		];
@@ -73,6 +74,23 @@ class UpdateFrontendUser extends Model
 			elseif(preg_match('/^ам$/ui',$this->$attribute))
 			{
 				$this->addError($attribute,'Нецензурные выражения запрещены');
+			}
+		}
+	}
+
+	public function phoneFilter($attribute,$params)
+	{	
+		$numberLayout = [
+			'/\+996[0-9]{4,}/ui',
+			'/0[0-9]{3}[0-9]{4,}/ui',
+			'/[0-9]{9,}/ui',
+		];
+
+		foreach($numberLayout as $number)
+		{
+			if(preg_match($number,$this->$attribute))
+			{
+				$this->addError($attribute,'Указывать номер телефона в описании запрещено');
 			}
 		}
 	}
