@@ -14,6 +14,7 @@ $(document).ready(function(){
         },1500)
     }
    	
+   	//Закрытие сайдбара при клике на категорию
    	$('.categories-link').click(function(){
 
    		setTimeout(function(){
@@ -27,6 +28,7 @@ $(document).ready(function(){
    		},500);
    	});
 
+   	//Закрытие сайдбара при клике на категорию
    	$('.sidebar-menu-link').click(function(){
 
    		setTimeout(function(){
@@ -83,6 +85,7 @@ $(document).ready(function(){
             make_action(url,data,grid_id);
     });
 
+    //Автоматическое закрытие попапа "Не активного заказ"
     $('#no-active').click(function(){
     	openPopup($('.popup.no-active'));
 
@@ -93,7 +96,6 @@ $(document).ready(function(){
 
     //Вывод колличество загруженных фото
     fileCount();
-
 });
 
 

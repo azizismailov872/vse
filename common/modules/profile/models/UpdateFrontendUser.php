@@ -50,7 +50,7 @@ class UpdateFrontendUser extends Model
 			[['username'],'checkUniqueUsername'],
 			[['status','balance'],'integer'],
 			[['username','surname','newPassword'],'string','max' => 255],
-			[['image'],'file','extensions' => 'jpg, png, jpeg'],
+			[['image'],'file','extensions' => 'jpg,png,jpeg','wrongExtension' => 'Загрузите фотографию с расширением: jpg, png, jpeg','maxSize' => 3145728,'tooBig' => 'Максимальный размер изображения 3МБ'],
 			[['photo'],'string'],
 			[['oldPassword'],'validatePassword'],
 			[['phone'],'minPhone'],
@@ -175,12 +175,12 @@ class UpdateFrontendUser extends Model
 
 	public function saveUser($image = null)
 	{	
+		$this->image = (!empty($image)) ? $image : null;
+
 		if($this->validate())
 		{	
 			$this->user->attributes = $this->attributes;
-
-			$this->user->image = (!empty($image)) ? $image : null;
-
+			$this->user->image = $this->image;
 			if(isset($this->newPassword) && !empty($this->newPassword))
 			{
 				$this->user->setPassword($this->newPassword);

@@ -16,11 +16,6 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@app/themes/vse';
     public $css = [
         'css/main.min.css',
-      	/*'css/style.min.css',
-      	'css/order.min.css',
-      	'css/profile.min.css',
-      	'css/popup.min.css',
-      	'css/message.min.css',*/
       	'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,800;0,900;1,500&display=swap',
       	//icons
       	'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css',
@@ -35,12 +30,8 @@ class AppAsset extends AssetBundle
         'js/mask/inputmask.binding.js',
         'js/mask/inputmask.js',
         'js/mask/jquery.inputmask.js',
-        /*'js/script.js',
-        'js/popup.js',
-        'js/message.js',
-        'js/order.js',*/
-        'js/main.js'
-
+        'js/main.js',
+        'js/menu.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
