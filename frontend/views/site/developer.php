@@ -7,8 +7,8 @@ use yii\helpers\Html;
 <h2 class="content-header d-lg-block d-none">Контакты разработчика</h2>
 <div class="row mb-4 mt-3">
 	<div class="col-6">
-		<h2 class="developer-contact-header"><a href="https://www.linkedin.com/in/aziz-ismailov-75b7a11bb/" class="developer-contact-link"  target="_blank">Linkedin</a></h2>
-		<p class="developer-contact-text"><a href="https://www.linkedin.com/in/aziz-ismailov-75b7a11bb/"  target="_blank">Aziz Ismailov</a></p>
+		<h2 class="developer-contact-header"><a href="https://www.linkedin.com/in/aziz-ismailov" class="developer-contact-link"  target="_blank">Linkedin</a></h2>
+		<p class="developer-contact-text"><a href="https://www.linkedin.com/in/aziz-ismailov"  target="_blank">Aziz Ismailov</a></p>
 	</div>
 	<div class="col-6">
 		<h2 class="developer-contact-header"><a href="https://www.instagram.com/nemovstud/"  target="_blank" class="developer-contact-link">Instagram</a></h2>
