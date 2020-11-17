@@ -38,7 +38,7 @@ use yii\widgets\LinkPager;
             'class' => 'error-message'
         ],
         'validateOnChange' => true,
-    ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Опишите ваш заказ. Например: Нужен ремонт квартиры...']);?>
+    ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Например: Нужен ремонт квартиры...']);?>
 </div>
 <?= $form->field($model,'category_id',[
     'template' => '

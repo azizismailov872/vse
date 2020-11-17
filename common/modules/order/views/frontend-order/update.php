@@ -36,7 +36,7 @@ use yii\widgets\LinkPager;
                 'tag' => 'div',
                 'class' => 'col-12'
             ],
-        ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Опишите ваш заказ. Например: Нужен ремонт квартиры...'])->label(false);?>
+        ])->textarea(['class' => 'order-form-textarea','placeholder' => 'Например: Нужен ремонт квартиры...'])->label(false);?>
     </div>
     <div class="row">
         <div class="col-12">
